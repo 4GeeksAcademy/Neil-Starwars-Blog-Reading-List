@@ -1,17 +1,16 @@
+// import PropTypes from "prop-types";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 
-export const Card = () => {
+export const CharacterCard = (props) => {
+  const { store, dispatch } = useGlobalReducer()
 
-  const {store, dispatch} =useGlobalReducer()
-
-    return (
-        <div className="card" style={{ width: "18rem;"}}>
-        <img src="..." className="card-img-top" alt="..."/>
-        <div className="card-body">
-          <h5 className="card-title">Card title</h5>
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" className="btn btn-primary">Go somewhere</a>
-        </div>
+  return (
+    <div className="card mx-2" style={{ "minwidth": "18rem" }}>
+      <img src="..." className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{props.Name}</h5>
+        <a href="#" className="btn btn-primary">Learn More</a>
       </div>
-    );
-}; 
+    </div>
+  );
+};

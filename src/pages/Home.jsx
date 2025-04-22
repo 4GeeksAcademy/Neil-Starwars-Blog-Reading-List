@@ -1,5 +1,6 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { useEffect, useState } from "react";
+import { CharacterCard } from "../components/Card.jsx";
 
 export const Home = () => {
 
@@ -11,17 +12,19 @@ export const Home = () => {
   }, [])
 
   useEffect(() => {
-	setCharacters(store.Characters)
+	GetCharacters(store.Characters)
   }, [store.Characters])
 
   console.log(Characters)
 
 	return (
 		<div className="text-center mt-5">
-			<h1>Hello Rigo!!</h1>
-			<p>
-				
-			</p>
+			<h2>Characters</h2>
+			<div classname="dflex col-10 overflow-auto mt-5 mx-auto">
+				{Characters?.map((character, index) =>{
+				return	<CharacterCard name={character.name}/>
+				})}
+			</div>
 		</div>
 	);
 }; 
