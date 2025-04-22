@@ -1,6 +1,6 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { useEffect, useState } from "react";
-import { CharacterCard } from "../components/Card.jsx";
+import { CharacterCard } from "../components/CharacterCard.jsx";
 
 export const Home = () => {
 
