@@ -1,6 +1,6 @@
 export const GetCharacters = async (payload,dispatch) => {
-    let response = await fetch("https://www.swapi.tech/api/people");
-    let data = response.json
+    let response = await fetch("https://www.swapi.tech/api/people" + payload);
+    let data = await response.json()
 
     dispatch({
         type: "add_character",
@@ -12,7 +12,7 @@ export const GetCharacters = async (payload,dispatch) => {
 
 export const GetOneCharacter = async (payload,dispatch) => {
     let response = await fetch("https://www.swapi.tech/api/people" + payload);
-    let data = response.json
+    let data = await response.json()
 
     dispatch({
         type: "add_character",

@@ -20,9 +20,9 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 			<h2>Characters</h2>
-			<div classname="dflex col-10 overflow-auto mt-5 mx-auto">
+			<div className="dflex col-10 overflow-auto mt-5 mx-auto">
 				{Characters?.map((character, index) =>{
-				return	<CharacterCard name={character.name}/>
+				return	<CharacterCard key={character.uid} name={character.name} uid={character.uid}/>
 				})}
 			</div>
 		</div>

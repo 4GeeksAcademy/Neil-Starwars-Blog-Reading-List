@@ -1,5 +1,5 @@
-export const initialStore=()=>{
-  return{
+export const initialStore = () => {
+  return {
     message: null,
     todos: [
       {
@@ -14,14 +14,15 @@ export const initialStore=()=>{
       }
     ],
     characters: [],
+    favorites: [],
   }
 }
 
 export default function storeReducer(store, action = {}) {
-  switch(action.type){
+  switch (action.type) {
     case 'add_task':
 
-      const { id,  color } = action.payload
+      const { id, color } = action.payload
 
       return {
         ...store,
@@ -33,7 +34,21 @@ export default function storeReducer(store, action = {}) {
         ...store,
         characters: action.payload
       };
+    case 'toggle_favorits':
+      let fav = store.favorites
+
+      if (fav.includes(action.payload)) {
+        fav = fav.filter((fav, index) => fav.name !== action.payload)
+      } else {
+        fav = [...fav, action.payload]
+      }
+      
+      return {
+        ...store,
+        favorites: fav
+      };
+
     default:
       throw Error('Unknown action.');
-  }    
+  }
 }
