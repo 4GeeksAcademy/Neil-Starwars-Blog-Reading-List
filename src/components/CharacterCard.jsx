@@ -18,8 +18,8 @@ export const CharacterCard = (props) => {
       <img src="..." className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{props.Name}</h5>
-        <span onclick={()=>handleFav()}> </span>
-        <Link to={`/Details/${props.uid}`} className="btn btn-primary">Learn More</Link>
+        <span onclick={()=>handleFav()}>🤩</span>
+        <Link to={`/${props.type}/${props.uid}`} className="btn btn-primary">Learn More</Link>
       </div>
     </div>
   );

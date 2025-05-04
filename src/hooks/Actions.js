@@ -19,3 +19,15 @@ export const GetOneCharacter = async (payload,dispatch) => {
         payload: data.results,
     });
 }
+
+
+
+export const GetPlanets = async (payload,dispatch) => {
+    let response = await fetch("https://www.swapi.tech/api/planets" + payload);
+    let data = await response.json()
+
+    dispatch({
+        type: "add_planet",
+        payload: data.results,
+    });
+}

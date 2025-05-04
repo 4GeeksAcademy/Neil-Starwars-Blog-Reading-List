@@ -15,6 +15,7 @@ export const initialStore = () => {
     ],
     characters: [],
     favorites: [],
+    planets: [],
   }
 }
 
@@ -33,6 +34,12 @@ export default function storeReducer(store, action = {}) {
       return {
         ...store,
         characters: action.payload
+      };
+    case 'add_planet':
+
+      return {
+        ...store,
+        planets: action.payload
       };
     case 'toggle_favorits':
       let fav = store.favorites
