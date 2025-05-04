@@ -1,11 +1,11 @@
-// import PropTypes from "prop-types";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { Link } from "react-router-dom";
 
 
 
-export const CharacterCard = (props) => {
+export const StarshipCard = (props) => {
   const { store, dispatch } = useGlobalReducer()
+  
   const handleFav = () => {
     dispatch({type: toggle_favorites, payload: props.name})
   }

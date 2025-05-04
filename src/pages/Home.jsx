@@ -1,16 +1,19 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { useEffect, useState } from "react";
 import { CharacterCard } from "../components/CharacterCard.jsx";
+import { PlanetDetails } from "./PlanetDetails.jsx";
+import { StarshipDetails } from "./StarshipDetails.jsx";
+
 
 export const Home = () => {
 
 	const { store, dispatch, GetCharacters, GetPlanets, GetStarships } = useGlobalReducer()
-	const { Characters, setCharacters } = useState()
-	const { planets, setPlanets } = useState()
-	const { starships, setStarships } = useState()
+	const [ Characters, setCharacters ] = useState()
+	const [ planets, setPlanets ] = useState()
+	const [ starships, setStarships ] = useState()
 
 	useEffect(() => {
-		if (store.charactes.length == 0) {
+		if (store.characters.length == 0) {
 			GetCharacters()
 		}
 		if (store.planets.length == 0) {

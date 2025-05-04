@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 
 
 
-export const CharacterCard = (props) => {
+export const PlanetCard = (props) => {
   const { store, dispatch } = useGlobalReducer()
+  
   const handleFav = () => {
     dispatch({type: toggle_favorites, payload: props.name})
   }
