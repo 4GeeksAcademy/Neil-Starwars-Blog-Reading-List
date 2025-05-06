@@ -26,7 +26,7 @@ export const router = createBrowserRouter(
         {/* Nested Routes: Defines sub-routes within the BaseHome component. */}
         <Route path= "/" element={<Home />} />
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
-        <Route path="/Details/:uid" element={ <DetailsPage />} />
+        <Route path="/people/:uid" element={ <DetailsPage />} />
         <Route path="/planets/:uid" element={ <PlanetDetails />} />
         <Route path="/starships/:uid" element={ <StarshipDetails />} />
         <Route path="/demo" element={<Demo />} />

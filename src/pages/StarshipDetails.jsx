@@ -8,17 +8,17 @@ import { useEffect, useState } from "react";
 
 export const StarshipDetails= () => {
     const { uid } = useParams()
-    const { starships, setStarships } = useState
+    const [ starships, setStarships ]= useState({})
     const { store, dispatch } = useGlobalReducer()
 
 
     useEffect(() => {
-        GetEachStarship()
+        getEachStarship()
     }, [])
 
 
 
-    const GetEachStarship = async () => {
+    const getEachStarship = async () => {
         let response = await fetch("https://www.swapi.tech/api/starships/" + uid);
         let data = await response.json()
         setStarships(data.result.properties)
@@ -29,10 +29,10 @@ export const StarshipDetails= () => {
             <h1>Name:</h1>
             <h3>{starships.name}</h3>
 
-            <h1>Gender:</h1>
+            <h1>Model:</h1>
             <h3>{starships.model}</h3>
             
-            <h1>Eye Color:</h1>
+            <h1>Hyperdrive:</h1>
             <h3>{starships.hyperdrive_rating}</h3>
         </div>
     );

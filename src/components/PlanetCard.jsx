@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 export const PlanetCard = (props) => {
   const { store, dispatch } = useGlobalReducer()
   
@@ -20,7 +21,7 @@ export const PlanetCard = (props) => {
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
         <span onClick={()=>handleFav()}>🤩</span>
-        <Link to={`/${props.type}/${props.uid}`} className="btn btn-primary">Learn More</Link>
+        <Link to={`/planets/${props.uid}`} className="btn btn-primary">Learn More</Link>
       </div>
     </div>
   );

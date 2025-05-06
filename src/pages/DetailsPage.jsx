@@ -8,17 +8,17 @@ import { useEffect, useState } from "react";
 
 export const DetailsPage = () => {
     const { uid } = useParams()
-    const { character, setCharacter } = useState
+    const [ character, setCharacter ] = useState({})
     const { store, dispatch } = useGlobalReducer()
 
 
     useEffect(() => {
-        GetEachCharacter()
+        getEachCharacter()
     }, [])
 
 
 
-    const GetEachCharacter = async () => {
+    const getEachCharacter = async () => {
         let response = await fetch("https://www.swapi.tech/api/people/" + uid);
         let data = await response.json()
         setCharacter(data.result.properties)
