@@ -1,6 +1,13 @@
-export const GetCharacters = async (payload,dispatch) => {
-    let response = await fetch("https://www.swapi.tech/api/people" + payload);
+export const getCharacters = async (dispatch,payload) => {
+    let response = await fetch("https://www.swapi.tech/api/people");
     let data = await response.json()
+    // if (response.ok) {
+    //     console.log("Here are you characters", data)
+    // } 
+    // for (let details of data.results) {
+    //     const detailsResponse = await fetch(details.url)
+    //     const detailsCharacters = await detailsResponse.json()
+    // }
 
     dispatch({
         type: "add_character",
@@ -22,8 +29,8 @@ export const GetCharacters = async (payload,dispatch) => {
 
 
 
-export const GetPlanets = async (payload,dispatch) => {
-    let response = await fetch("https://www.swapi.tech/api/planets" + payload);
+export const getPlanets = async (dispatch,payload) => {
+    let response = await fetch("https://www.swapi.tech/api/planets");
     let data = await response.json()
 
     dispatch({
@@ -35,8 +42,8 @@ export const GetPlanets = async (payload,dispatch) => {
 
 
 
-export const GetStarships = async (payload,dispatch) => {
-    let response = await fetch("https://www.swapi.tech/api/starships" + payload);
+export const getStarships = async (dispatch,payload) => {
+    let response = await fetch("https://www.swapi.tech/api/starships");
     let data = await response.json()
 
     dispatch({

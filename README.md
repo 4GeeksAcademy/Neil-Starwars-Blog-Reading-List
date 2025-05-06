@@ -11,10 +11,10 @@ Used by 4Geeks.com and 4Geeks Academy students, this template helps to bootstrap
 
 2. Create a .env file by typing `$ cp .env.example .env`
 
-3. Start coding! and the vite dev server with live reload by typing: `$ npm run start`
+3. Start coding! and the vite dev server with live reload by typing: `$  npm install`
 
 
-### Styling
+### Stylingnpm run 
 
 You can update the `./index.css` or create new `.css` files and import them into your current css or js files depending on your needs.
 
