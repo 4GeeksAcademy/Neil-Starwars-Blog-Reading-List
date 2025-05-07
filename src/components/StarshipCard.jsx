@@ -7,7 +7,7 @@ export const StarshipCard = (props) => {
   const { store, dispatch } = useGlobalReducer()
   
   const handleFav = () => {
-    dispatch({type: toggle_favorites, payload: props.name})
+    dispatch({type: "toggle_favorites", payload: props.name})
   }
 
   
@@ -18,7 +18,7 @@ export const StarshipCard = (props) => {
       <img src="..." className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{props.name}</h5>
-        <span onClick={()=>handleFav()}>🤩</span>
+        <button className="btn btn-primary" onClick={()=>handleFav()}>🤩</button>
         <Link to={`/starships/${props.uid}`} className="btn btn-primary">Learn More</Link>
       </div>
     </div>

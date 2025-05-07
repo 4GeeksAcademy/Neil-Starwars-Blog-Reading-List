@@ -49,17 +49,17 @@ export default function storeReducer(store, action = {}) {
         starships: action.payload
       };
     case 'toggle_favorites':
-      let fav = store.favorites
+      let favs = store.favorites
 
-      if (fav.includes(action.payload)) {
-        fav = fav.filter((fav, index) => fav !== action.payload)
+      if (favs.includes(action.payload)) {
+        favs = favs.filter((fav, index) => fav !== action.payload)
       } else {
-        fav = [...fav, action.payload]
+        favs = [...favs, action.payload]
       }
       
       return {
         ...store,
-        favorites: fav
+        favorites: favs
       };
 
     default:
